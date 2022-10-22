@@ -2,13 +2,13 @@ money_capital = 10000
 salary = 5000
 spend = 6000
 increase = 0.05
-whole_money = money_capital
 month = 0
-while whole_money >= spend:
+while money_capital >= spend:
     month += 1
-    whole_money = salary + whole_money
-    spend *= 1.05
-    whole_money = whole_money - spend
+    money_capital = salary + money_capital
+    spend = spend + spend * increase
+    money_capital= money_capital - spend
 
 
 print(month)
+
