@@ -6,8 +6,8 @@ need_money = 0
 
 
 for i in range(months):
-    need_money = need_money + salary - spend
+    need_money = need_money - salary + spend
     spend = spend + spend * increase
 
-need_money *= -1
+
 print(round(need_money))
