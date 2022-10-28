@@ -1,6 +1,8 @@
 def delete(list_, index=None):
     if index is None:
         return list_[:len(list_)-1]
+    elif index < 0:
+        return list_[:len(list_)+index] + list_[len(list_) + index:]
     else:
         return list_[:index] + list_[index+1:]
 
