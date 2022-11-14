@@ -1,12 +1,12 @@
-import random
+from random import sample
 
 
-def get_unique_list_numbers() -> list[int]:
+def get_unique_list_numbers(lmin: int = -10, rmax: int = 10,
+                            lof_string: int = 15) -> list[int]:
 
-    rand_list = [x for x in range(-10, 10)]
-    random.shuffle(rand_list)
+    rand_list = [x for x in range(lmin, rmax, 1)]
 
-    return rand_list[:15]
+    return sample(rand_list, lof_string)
 
 
 list_unique_numbers = get_unique_list_numbers()
