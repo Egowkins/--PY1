@@ -6,11 +6,10 @@ OUTPUT_FILE = "output.csv"
 
 def to_csv_file(filename, headers, rows, delimiter=',', new_line='\n'):
     with open(filename, 'w') as f:
-        head = ",".join(headers) + new_line
-        f.writelines(head)
+
+        f.writelines(delimiter.join(headers) + new_line)
         for lines in rows:
-            lines1 = ",".join(lines) + new_line
-            f.writelines(lines1)
+            f.writelines(delimiter.join(lines) + new_line)
 
 
 
