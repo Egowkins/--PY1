@@ -2,24 +2,15 @@ OUTPUT_FILE = "output.csv"
 
 
 # TODO реализовать функцию to_csv_file
+
+
 def to_csv_file(filename, headers, rows, delimiter=',', new_line='\n'):
     with open(filename, 'w') as f:
-        for chars in headers:
-            f.write(chars)
-            if headers.index(chars) != len(headers) - 1:
-                f.write(delimiter)
-            else:
-                f.write(new_line)
-
+        head = ",".join(headers) + new_line
+        f.writelines(head)
         for lines in rows:
-            for chars in lines:
-                f.write(chars)
-                if lines.index(chars) != len(lines) - 1:
-                    f.write(delimiter)
-                else:
-                    f.write(new_line)
-
-
+            lines1 = ",".join(lines) + new_line
+            f.writelines(lines1)
 
 
 
